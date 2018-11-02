@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<title>Lupus Oxford | Home</title>
+		<link href="style.css" rel="stylesheet" type="text/css" />
+	</head>
+
+	<body>
+		<header>
+			<div id="topbar">
+			<img src="images/logo.png" title="logo" width="220" >		
+			</div>	
+		</header>
+
+		
+	<div id="nav">
+		<ul>
+			<li><a class="active" href="index.html">Home</a></li>
+			<li><a href="whatislupus.html">What is lupus</a></li>
+			<li><a href="news.html">News and Events</a></li>
+			<li><a href="merch.html">Merchandise</a></li>
+			<li><a href="aboutus.html">About us</a></li>	
+			
+		</ul>
+	</div>
+	
+	
+	<div class="slider-holder"> 
+		<div class="slideshow-container">
+			<div class="mySlides fade">
+			<img src="images/banner1.jpg" title= "Oxford Lupus Marathon 2018" style="width:100%">
+			<div class="text">Oxford Lupus Marathon 2018</div>
+		</div>
+
+		<div class="mySlides fade">
+			<a href="whatislupus.html" >
+			<img src="images/banner2.jpg" title="Questions about lupus?" style="width:100%"></a>
+			<div class="text">Questions about lupus?</div>
+		</div>
+
+		<div class="mySlides fade">
+			<a href ="news.html">
+			<img src="images/banner3.jpg" title="Lupus news and research" style="width:100%">
+			<div class="text">Lupus news and research</div></a>
+		</div>
+
+		<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+		<a class="next" onclick="plusSlides(1)">&#10095;</a>
+		</div>
+		<br>
+
+		<div style="text-align:center">
+			<span class="dot" onclick="currentSlide(1)"></span> 
+			<span class="dot" onclick="currentSlide(2)"></span> 
+			<span class="dot" onclick="currentSlide(3)"></span> 
+		</div>
+	</div> 
+		
+		
+	<div class="textholder">	
+		<hr> <!-- line separator -->
+		<h1> Welcome to Lupus Oxford </h1>
+		<p>Lupus Oxford is the only charity in oxford that is supporting people with systemic lupus and
+		assisting those approaching diagnosis. </p>
+		
+		<p>Our charity is associated with the UK's leading lupus organisations that are devoted to solving
+		the mystery of lupus, while giving caring support to those who suffer from its brutal impact.</p>
+		
+		<p>We presently have over 5500 Members and a number of Regional Groups around the UK who 
+		arrange medical talks, publish local newsletters, set up local occasions and organise 
+		fundraising events. </p>
+			
+		<hr> <!-- line separator -->
+	
+		<div class="socialmediaPicHolder">
+			<p> follow us on social media </p>
+			
+			<a href="https://en-gb.facebook.com"><img src="images/socialmedia/fb.png" title="facebook"></a>
+			<a href="https://twitter.com"> <img src="images/socialmedia/twitter.png" title="twitter"></a>
+			<a href="https://www.youtube.com"> <img src="images/socialmedia/youtube.png" title="youtube"></a>
+			<a href="https://www.instagram.com"><img src="images/socialmedia/insta.png" title="instagram"></a>
+			
+			<p> Subscribe to our newsletter by entering your email below</p>
+			<input type="Email" placeholder="Enter your email" >
+			<input type="Submit" value="Submit">
+		</div>
+		
+		
+	
+	<hr> <!-- line separator -->
+
+	</div>
+	
+	<div class="footerholder">
+		<p>By: Dino Purificacion</p>	
+	</div>						
+	
+	
+	<script>
+	var slideIndex = 1;
+	showSlides(slideIndex);
+
+	function plusSlides(n) {
+	  showSlides(slideIndex += n);
+	}
+
+	function currentSlide(n) {
+	  showSlides(slideIndex = n);
+	}
+
+	function showSlides(n) {
+		var i;
+		var slides = document.getElementsByClassName("mySlides");
+		var dots = document.getElementsByClassName("dot");
+		if (n > slides.length) {slideIndex = 1} 
+			if (n < 1) {slideIndex = slides.length}
+			for (i = 0; i < slides.length; i++) {
+				slides[i].style.display = "none"; 
+			}
+		for (i = 0; i < dots.length; i++) {
+			dots[i].className = dots[i].className.replace(" active", "");
+			}
+		slides[slideIndex-1].style.display = "block"; 
+		dots[slideIndex-1].className += " active";
+	}
+
+	loop();
+	function loop() {
+	var i;
+	var slides = document.getElementsByClassName("mySlides");
+		for (i = 0; i < slides.length; i++) {
+			slides[i].style.display = "none";  
+			}
+			slideIndex++;
+		if (slideIndex > slides.length) {slideIndex = 1}    
+			slides[slideIndex-1].style.display = "block";  
+			setTimeout(loop, 5000); // Change image every 5 seconds
+		}
+	</script>
+	
+	</body>
+
+</html>
